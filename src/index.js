@@ -39,12 +39,7 @@ const PORT = process.env.PORT || 5000;
 
 (async () => {
   try {
-    await sequelize.authenticate();
-    console.log('Database connected');
-
-    // dev convenience: sync models (use migrations in production)
-    await sequelize.sync({ alter: true });
-    console.log('Models synced');
+    console.log("DB disabled: running without database");
 
     // seed demo user/org if none
     const userCount = await User.count();
