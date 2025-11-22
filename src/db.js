@@ -4,6 +4,7 @@ require("dotenv").config();
 const sequelize = new Sequelize({
   dialect: "sqlite",
   storage: process.env.SQLITE_STORAGE || "data/hrms.sqlite",
+  dialectModule: require("better-sqlite3"),
   logging: false,
   define: {
     timestamps: false,
